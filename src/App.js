@@ -24,7 +24,7 @@ function App() {
     <>
       <SignUp setAuthenticatedUser={setAuthenticatedUser} />
       {/* {authenticatedUser && <div>Hello!</div>} */}
-      <SignIn />
+      <SignIn setAuthenticatedUser={setAuthenticatedUser} />
     </>
   );
 }

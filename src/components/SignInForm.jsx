@@ -1,9 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 
-export default function SignIn() {
-  const [authenticatedUser, setAuthenticatedUser] = useState(null);
-
+export default function SignIn({ setAuthenticatedUser }) {
   const [userName, setUserName] = useState("");
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");

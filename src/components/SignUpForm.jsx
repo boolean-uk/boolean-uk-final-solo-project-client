@@ -1,9 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 
-export default function SignUp() {
-  const [authenticatedUser, setAuthenticatedUser] = useState(null);
-
+export default function SignUp({ setAuthenticatedUser }) {
   const [userName, setUserName] = useState("");
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
@@ -40,9 +38,9 @@ export default function SignUp() {
     fetch("http://localhost:3030/auth/signup", fetchOptions)
       .then((res) => res.json())
       .catch(console.log)
-      .then((token) => {
-        console.log("token: ", token);
-        // const token = data.token;
+      .then((data) => {
+        console.log("token: ", data.token);
+        const token = data.token;
 
         if (token) {
           setAuthenticatedUser(token);
