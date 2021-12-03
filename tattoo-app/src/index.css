@@ -1,0 +1,29 @@
+.center {
+  max-width: 60ch;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.light-shadow {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16), 0 3px 9px rgba(0, 0, 0, 0.12);
+}
+
+.form-stack > * + * {
+  margin-top: 0.5rem;
+}
+
+.form-stack > label {
+  display: block;
+}
+
+.form-stack > input {
+  width: 100%;
+}
+
+.user-form {
+  padding: 2rem;
+  /* background-color: rgb(3, 36, 36); */
+  border-radius: 1rem;
+}
