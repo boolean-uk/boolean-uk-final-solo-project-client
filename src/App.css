@@ -1,0 +1,83 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+
+li {
+    text-decoration: none;
+}
+
+/* header CSS */
+
+header {
+    background-color: rgba(255, 0, 0, 0.685);
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+h1 {
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.search-bar {
+    height: 60px;
+    width: 250px;
+    border-radius: 12px;
+}
+
+.inside-header-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 20px;
+
+}
+
+.icon-img {
+    height: auto;
+    width: 60px;
+    display: inline-block;
+}
+
+/* Main CSS */
+
+.three-col-grid {
+    display: grid;
+    grid-template-columns: 1fr 8fr 1fr;
+}
+
+.body {
+    background-color: rgb(218, 218, 218);
+    margin-top: 1.6rem;
+    border: grey 3px solid;
+}
+
+.filter-box {
+    margin: 1rem;
+    background-color: rgb(161, 161, 161);
+    border: grey 3px solid;
+    display: grid;
+    grid-auto-columns: auto;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 10px;
+}
+
+.product {
+    background-color: white;
+    width: 450px;
+    border: rgb(6, 173, 28) 3px solid;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.product-img {
+    height: auto;
+    width: 400px;
+}
