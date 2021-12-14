@@ -1,48 +1,48 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 
 function App() {
   const [products, setProducts] = useState([])
-  function GetAllProducts() {
-    const url = `http://localhost:3000/products`
-    fetch(url)
+
+  const { apiUrl } = require('./utils/constant');
+
+  console.log(apiUrl)
+
+  useEffect(() => {
+    fetch(`${apiUrl}/products`)
       .then((res) => res.json())
-      .then((Data) => {
-        setProducts(Data)
+      .then((data) => {
+        console.log(data)
+        setProducts(data)
       })
-  }
+  }, [])
+  console.log("inside products", products)
   return (
     <div className="App">
-      <header>
+      <header className="header">
         <div>
+        </div>
+        <div className="inside-header-grid">
           <a href="">
             <h1>The Chirstmas Jumper Company</h1>
           </a>
-        </div>
-        <div>
           <form>
-            <input placeholder="Search" />
+            <input className="search-bar" placeholder="Search" />
           </form>
+          <a href="">
+            <img className="icon-img" src="https://cdn-icons-png.flaticon.com/512/2089/2089433.png" alt="Basket"></img>
+          </a>
         </div>
         <div>
-          <a href="">
-            <img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png" alt="User"></img>
-          </a>
-          <a href="">
-            <img src="https://cdn-icons-png.flaticon.com/512/860/860808.png" alt="Favourites"></img>
-          </a>
-          <a href="">
-            <img src="https://cdn-icons-png.flaticon.com/512/2089/2089433.png" alt="Basket"></img>
-          </a>
         </div>
       </header>
-      <main>
+      <main className="three-col-grid">
         <div></div>
         <div>
           <section></section>
-          <section>
-            <div>
-              <form>
+          <section className="body">
+            <div >
+              <form className="filter-box">
                 <select>
                   <option>Price</option>
                   <option>{`>`}£10</option>
@@ -59,17 +59,15 @@ function App() {
                   <option></option>
                 </select>
               </form>
-              <ul>
+              <ul className="product-grid">
                 {products.map((product, index) => {
+                  console.log("inside map product", product)
                   return (
-                    <li>
+                    <li className="product">
                       <a href="">
-                        <img>{product.img}</img>
+                        <img className="product-img" src={product.img} alt="jumper"></img>
                         <p>{product.name}</p>
-                        <p>{product.price}</p>
-                        <button>
-                          <img src="https://cdn-icons-png.flaticon.com/512/860/860808.png" alt="Favourites"></img>
-                        </button>
+                        <p>£{product.price}</p>
                         <button>Add To Basket</button>
                       </a>
                     </li>
